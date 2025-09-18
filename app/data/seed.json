@@ -1,0 +1,184 @@
+{
+  "productos": [
+    {
+      "nombre": "Protector solar facial Nivea",
+      "precio": 125,
+      "stock": 50,
+      "categoria": "Productos faciales"
+    },
+    {
+      "nombre": "Limpiador facial CeraVe espuma",
+      "precio": 185,
+      "stock": 35,
+      "categoria": "Productos faciales"
+    },
+    {
+      "nombre": "Sérum vitamina C The Ordinary",
+      "precio": 220,
+      "stock": 28,
+      "categoria": "Productos faciales"
+    },
+    {
+      "nombre": "Crema hidratante Neutrogena",
+      "precio": 165,
+      "stock": 42,
+      "categoria": "Productos faciales"
+    },
+    {
+      "nombre": "Tónico facial Thayers rosa",
+      "precio": 195,
+      "stock": 31,
+      "categoria": "Productos faciales"
+    },
+    {
+      "nombre": "Mascarilla arcilla Aztec Secret",
+      "precio": 145,
+      "stock": 25,
+      "categoria": "Productos faciales"
+    },
+    {
+      "nombre": "Exfoliante facial St. Ives",
+      "precio": 95,
+      "stock": 38,
+      "categoria": "Productos faciales"
+    },
+    {
+      "nombre": "Agua micelar Garnier",
+      "precio": 135,
+      "stock": 45,
+      "categoria": "Productos faciales"
+    },
+    {
+      "nombre": "Crema anti-edad Olay",
+      "precio": 285,
+      "stock": 22,
+      "categoria": "Productos faciales"
+    },
+    {
+      "nombre": "Contorno ojos Kiehls",
+      "precio": 425,
+      "stock": 18,
+      "categoria": "Productos faciales"
+    },
+    {
+      "nombre": "Jabón corporal Dove original",
+      "precio": 45,
+      "stock": 75,
+      "categoria": "Productos corporales"
+    },
+    {
+      "nombre": "Loción corporal Cetaphil",
+      "precio": 185,
+      "stock": 40,
+      "categoria": "Productos corporales"
+    },
+    {
+      "nombre": "Aceite corporal Bio-Oil",
+      "precio": 245,
+      "stock": 30,
+      "categoria": "Productos corporales"
+    },
+    {
+      "nombre": "Exfoliante corporal Tree Hut coco",
+      "precio": 165,
+      "stock": 33,
+      "categoria": "Productos corporales"
+    },
+    {
+      "nombre": "Desodorante Rexona clinical",
+      "precio": 85,
+      "stock": 55,
+      "categoria": "Productos corporales"
+    },
+    {
+      "nombre": "Gel ducha Johnson's baby",
+      "precio": 75,
+      "stock": 48,
+      "categoria": "Productos corporales"
+    },
+    {
+      "nombre": "Crema corporal Nivea soft",
+      "precio": 125,
+      "stock": 52,
+      "categoria": "Productos corporales"
+    },
+    {
+      "nombre": "Protector solar corporal Coppertone",
+      "precio": 195,
+      "stock": 28,
+      "categoria": "Productos corporales"
+    },
+    {
+      "nombre": "Shampoo anticaspa Head & Shoulders",
+      "precio": 95,
+      "stock": 65,
+      "categoria": "Cuidado capilar"
+    },
+    {
+      "nombre": "Acondicionador Pantene oro",
+      "precio": 105,
+      "stock": 58,
+      "categoria": "Cuidado capilar"
+    },
+    {
+      "nombre": "Mascarilla capilar TRESemmé",
+      "precio": 145,
+      "stock": 35,
+      "categoria": "Cuidado capilar"
+    },
+    {
+      "nombre": "Aceite capilar argán Moroccan Oil",
+      "precio": 385,
+      "stock": 20,
+      "categoria": "Cuidado capilar"
+    },
+    {
+      "nombre": "Shampoo seco Batiste",
+      "precio": 155,
+      "stock": 42,
+      "categoria": "Cuidado capilar"
+    },
+    {
+      "nombre": "Serum capilar Kerastase",
+      "precio": 425,
+      "stock": 15,
+      "categoria": "Cuidado capilar"
+    },
+    {
+      "nombre": "Crema manos Neutrogena",
+      "precio": 85,
+      "stock": 60,
+      "categoria": "Cuidado de manos"
+    },
+    {
+      "nombre": "Exfoliante manos Bath & Body Works",
+      "precio": 125,
+      "stock": 38,
+      "categoria": "Cuidado de manos"
+    },
+    {
+      "nombre": "Crema talones Flexitol",
+      "precio": 165,
+      "stock": 25,
+      "categoria": "Cuidado de pies"
+    },
+    {
+      "nombre": "Lima pies eléctrica Scholl",
+      "precio": 285,
+      "stock": 12,
+      "categoria": "Cuidado de pies"
+    },
+    {
+      "nombre": "Bálsamo labial Blistex",
+      "precio": 35,
+      "stock": 85,
+      "categoria": "Cuidado labial"
+    },
+    {
+      "nombre": "Exfoliante labios Fresh",
+      "precio": 195,
+      "stock": 22,
+      "categoria": "Cuidado labial"
+    }
+  ]
+}
