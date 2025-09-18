@@ -103,6 +103,13 @@ def delete_producto(id):
     db.session.commit()
     return jsonify({"mensaje": "Producto eliminado :)"}), 200
 
+#Para obtener la orden
+@app.get("/ordenesproducto")
+def get_ordenesproducto():
+    ordenes_producto = OrdenProducto.query.all()
+    resultado = [op.to_dict() for op in ordenes_producto]
+    return jsonify(resultado), 200
+
 
 if __name__ == '__main__':
     app.run(debug=True)
