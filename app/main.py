@@ -110,6 +110,26 @@ def get_ordenesproducto():
     resultado = [op.to_dict() for op in ordenes_producto]
     return jsonify(resultado), 200
 
+@app.post("/orden")
+def add_orden():
+    data = request.json
+    if not data:
+        return jsonify({"error": "Datos faltantes"}), 400
+    nuevo = Orden(
+        fecha=data.get("fecha"),
+        cliente=data.get("cliente"),
+        total_productos=data.get("total_productos"),
+        tienda_id=data.get("tienda_id")
+    )
+    db.session.add(nuevo)
+    db.session.commit()
+    return jsonify({
+        "id": nuevo.id,
+        "fecha": nuevo.fecha,
+        "cliente": nuevo.cliente,
+        "total_productos": nuevo.total_productos,
+        "tienda_id": nuevo.tienda_id
+    }), 201
 
 if __name__ == '__main__':
     app.run(debug=True)
