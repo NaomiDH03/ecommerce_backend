@@ -70,3 +70,10 @@ class Tienda(db.Model):
             'ubicacion': self.ubicacion,
             'items': [item.to_dict() for item in self.items]
         }
+    
+def seed_productos():
+    productos = [
+        Producto(nombre="bloqueador", precio=15000, stock=10, categoria="producto facial")
+    ]
+    db.session.bulk_save_objects(productos)
+    db.session.commit()

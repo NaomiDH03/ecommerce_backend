@@ -1,0 +1,226 @@
+openapi: 3.0.3
+info:
+  title: API de Tienda de Productos
+  version: 1.0.0
+  description: |
+    API REST para gestionar productos, órdenes y tiendas.
+    Implementada con Flask + SQLAlchemy.
+servers:
+  - url: http://localhost:5000
+    description: Servidor local de desarrollo
+paths:
+  /:
+    get:
+      summary: Mensaje de bienvenida
+      responses:
+        "200":
+          description: Mensaje de bienvenida
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "Tienda de productos"
+  /productos:
+    get:
+      summary: Obtener lista de productos
+      parameters:
+        - in: query
+          name: nombre
+          schema:
+            type: string
+          description: Filtrar productos por nombre (coincidencia parcial)
+        - in: query
+          name: categoria
+          schema:
+            type: string
+          description: Filtrar productos por categoría (coincidencia parcial)
+        - in: query
+          name: page
+          schema:
+            type: integer
+            default: 1
+          description: Página para paginación
+        - in: query
+          name: per_page
+          schema:
+            type: integer
+            default: 10
+          description: Cantidad de productos por página
+      responses:
+        "200":
+          description: Lista de productos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Producto'
+    post:
+      summary: Crear un nuevo producto
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductoInput'
+      responses:
+        "201":
+          description: Producto creado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Producto'
+        "400":
+          description: Datos faltantes
+  /productos/{id}:
+    get:
+      summary: Obtener producto por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Producto encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Producto'
+        "404":
+          description: Producto no encontrado
+    put:
+      summary: Actualizar producto por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductoInput'
+      responses:
+        "200":
+          description: Producto actualizado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mensaje:
+                    type: string
+                    example: "Producto actualizado :)"
+        "404":
+          description: Producto no encontrado
+    delete:
+      summary: Eliminar producto por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Producto eliminado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mensaje:
+                    type: string
+                    example: "Producto eliminado :)"
+        "404":
+          description: Producto no encontrado
+components:
+  schemas:
+    Producto:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        nombre:
+          type: string
+          example: bloqueador
+        precio:
+          type: number
+          format: float
+          example: 150.0
+        stock:
+          type: integer
+          example: 10
+        categoria:
+          type: string
+          example: producto facial
+    ProductoInput:
+      type: object
+      required:
+        - nombre
+        - precio
+        - stock
+        - categoria
+      properties:
+        nombre:
+          type: string
+        precio:
+          type: number
+          format: float
+        stock:
+          type: integer
+        categoria:
+          type: string
+    Orden:
+      type: object
+      properties:
+        id:
+          type: integer
+        fecha:
+          type: string
+          example: "2025-09-18"
+        cliente:
+          type: string
+          example: "Naomi Díaz"
+        total_productos:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrdenProducto'
+        tienda_id:
+          type: integer
+    OrdenProducto:
+      type: object
+      properties:
+        id:
+          type: integer
+        orden_id:
+          type: integer
+        producto_id:
+          type: integer
+        cantidad:
+          type: integer
+        producto:
+          $ref: '#/components/schemas/Producto'
+    Tienda:
+      type: object
+      properties:
+        id:
+          type: integer
+        nombre:
+          type: string
+          example: "Sucursal Puebla"
+        ubicacion:
+          type: number
+          format: float
+          example: 19.0413
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Orden'
